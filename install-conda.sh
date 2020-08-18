@@ -1,5 +1,6 @@
 #!/bin/bash
 apt-get update -y
+apt-get upgrade -y
 apt-get install curl -y
 #apt-get install build-essential -y
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-ppc64le.sh -O miniconda.sh
