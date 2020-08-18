@@ -5,4 +5,4 @@ dist: bionic
 service: docker
 
 script:
-  - docker run -a stdin -a stdout -a stderr -u root -v $PWD:/home/travis/:rw,z ubuntu:18.04 bash /home/travis/install-conda.sh
+  - docker run -a stdin -a stdout -a stderr -u root -v $PWD:/home/travis/:rw,z ubuntu:16.04 bash /home/travis/install-conda.sh
