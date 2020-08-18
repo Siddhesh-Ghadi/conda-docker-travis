@@ -1,0 +1,8 @@
+arch: ppc64le
+  
+dist: bionic
+
+service: docker
+
+script:
+  - docker run -a stdin -a stdout -a stderr -u root -v $PWD:/:rw,z ubuntu:18.04 bash /script.sh
