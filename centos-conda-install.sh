@@ -14,6 +14,8 @@ conda install -y git
 echo "INSTALLED"
 conda config --prepend channels https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda/
 export IBM_POWERAI_LICENSE_ACCEPT=yes
-curl https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda/linux-ppc64le/current_repodata.json
+#curl https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda/linux-ppc64le/current_repodata.json
+conda config --set ssl_verify False
+conda update conda
 conda install --yes --quiet conda-forge-ci-setup=2 conda-build=3.19.2 -c conda-forge
 
