@@ -1,5 +1,6 @@
 #!/bin/bash
 apt update -y
+apt install -y wget
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-ppc64le.sh -O miniconda.sh;
 bash miniconda.sh -b -p $HOME/miniconda
 source "$HOME/miniconda/etc/profile.d/conda.sh"
