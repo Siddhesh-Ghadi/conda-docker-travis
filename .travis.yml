@@ -5,9 +5,9 @@ sudo: required
 service: docker
 
 script:
-  - sudo systemctl stop docker
   - ifconfig
   - docker run -t centos:7 bash -c 'ifconfig'
+  - sudo systemctl stop docker
   - sudo cat /etc/docker/daemon.json
   - sudo sed -i 's/1460/1300/g' /etc/docker/daemon.json
   - sudo systemctl start docker
