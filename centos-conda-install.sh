@@ -1,7 +1,7 @@
 #!/bin/bash
 yum update -y
 yum install python3 wget gcc g++ make curl -y
-ifconfig
+ip link
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-ppc64le.sh -O miniconda.sh
 bash miniconda.sh -b -p $HOME/miniconda
 source "$HOME/miniconda/etc/profile.d/conda.sh"
