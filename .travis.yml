@@ -1,10 +1,16 @@
 arch: ppc64le
   
 dist: bionic
-
+sudo: required
 service: docker
 
 script:
+  - ifconfig
+  - sudo cat /etc/docker/daemon.json
+  - sudo sed 's/1460/1300/g' /etc/docker/daemon.json
+  - sudo cat /etc/docker/daemon.json
+  - ifconfig
+  - systemctl restart docker
   - #docker run -a stdin -a stdout -a stderr -u root -v $PWD:/home/travis/:rw,z ubuntu:16.04 bash /home/travis/install-conda.sh
   - docker run -a stdin -a stdout -a stderr -u root -v $PWD:/home/travis/:rw,z centos:7 bash /home/travis/centos-conda-install.sh
   - #docker run -a stdin -a stdout -a stderr -u root ubuntu:18.04 bash -c 'apt update -y && apt install -y git'
