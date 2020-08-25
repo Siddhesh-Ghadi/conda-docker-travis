@@ -7,10 +7,9 @@ service: docker
 script:
   - sudo systemctl stop docker
   - ifconfig
+  - docker run -t centos:7 bash -c 'ifconfig'
   - sudo cat /etc/docker/daemon.json
   - sudo sed -i 's/1460/1300/g' /etc/docker/daemon.json
-  - sudo cat /etc/docker/daemon.json
-  - ifconfig
   - sudo systemctl start docker
   - #docker run -a stdin -a stdout -a stderr -u root -v $PWD:/home/travis/:rw,z ubuntu:16.04 bash /home/travis/install-conda.sh
   - docker run -a stdin -a stdout -a stderr -u root -v $PWD:/home/travis/:rw,z centos:7 bash /home/travis/centos-conda-install.sh
